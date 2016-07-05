@@ -442,11 +442,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    var manualDateString = this.state.manualDate;
 
-	    // Add a space between a number and pm if needed
-	    if (manualDateString) {
-	      for (var i = 0; i <= 9; i++) {
-	        manualDateString = manualDateString.replace(new RegExp(i.toString() + "pm", "g"), i.toString() + " pm");
-	      }
+	    // Add a space before pm if there wasn't one
+	    if (manualDateString !== null) {
+	      manualDateString = manualDateString.replace(/([0-9]+)pm/, '$1 pm');
 	    }
 
 	    var dateTimeFormats = [];
@@ -478,8 +476,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        } else if (this.state.value === '') {
 	          this.props.onChangeDate('', false);
 	        }
-	      } else if (fullDate.isValid() && !(0, _date_utils.isDayDisabled)(fullDate, this.props)) {
-	        this.props.onChangeDate(fullDate, true);
+	      } else {
+	        if (fullDate.isValid() && !(0, _date_utils.isDayDisabled)(fullDate, this.props)) {
+	          this.props.onChangeDate(fullDate, true);
+	        }
 	      }
 	      this.state.manualDate = null;
 	    }
