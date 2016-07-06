@@ -362,6 +362,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 	var DateInput = _react2.default.createClass({
 	  displayName: 'DateInput',
 
@@ -492,10 +494,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.refs.input.focus();
 	  },
 	  render: function render() {
+	    var _props = this.props;
+	    var date = _props.date;
+	    var locale = _props.locale;
+	    var minDate = _props.minDate;
+	    var maxDate = _props.maxDate;
+	    var excludeDates = _props.excludeDates;
+	    var includeDates = _props.includeDates;
+	    var filterDate = _props.filterDate;
+	    var dateFormat = _props.dateFormat;
+	    var dateOnlyFormat = _props.dateOnlyFormat;
+	    var dateOnly = _props.dateOnly;
+	    var isEmpty = _props.isEmpty;
+	    var onInputKeyDown = _props.onInputKeyDown;
+	    var onChangeDate = _props.onChangeDate;
+	    var timezone = _props.timezone;
+	    var showPicker = _props.showPicker;
+
+	    var inputProps = _objectWithoutProperties(_props, ['date', 'locale', 'minDate', 'maxDate', 'excludeDates', 'includeDates', 'filterDate', 'dateFormat', 'dateOnlyFormat', 'dateOnly', 'isEmpty', 'onInputKeyDown', 'onChangeDate', 'timezone', 'showPicker']);
+
 	    return _react2.default.createElement('input', _extends({
 	      ref: 'input',
 	      type: 'text'
-	    }, this.props, {
+	    }, inputProps, {
 	      value: this.state.value,
 	      onKeyDown: this.onKeyDown,
 	      onBlur: this.handleBlur,
