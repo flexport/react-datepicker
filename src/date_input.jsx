@@ -162,10 +162,16 @@ var DateInput = React.createClass({
   },
 
   render () {
+    const {
+      date, locale, minDate, maxDate, excludeDates, includeDates, 
+      filterDate, dateFormat, dateOnlyFormat, dateOnly, isEmpty,
+      onInputKeyDown, onChangeDate, timezone, showPicker,
+      ...inputProps
+    } = this.props;
     return <input
         ref='input'
         type='text'
-        {...this.props}
+        {...inputProps}
         value={this.state.value}
         onKeyDown={this.onKeyDown}
         onBlur={this.handleBlur}
