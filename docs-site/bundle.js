@@ -30543,7 +30543,7 @@
 	      timezone: this.props.timezone,
 	      timePickerButton: this.props.timeDisabled ? false : this.props.timePickerButton,
 	      onToggle: this.handleToggleTime,
-	      showTimePicker: this.props.timeDisabled ? false : this.state.showTimePicker,
+	      showTimePicker: this.state.showTimePicker,
 	      onRemoveTime: this.handleRemoveTime });
 	  },
 	  renderDateInput: function renderDateInput() {
