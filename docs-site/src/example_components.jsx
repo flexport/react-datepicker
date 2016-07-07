@@ -4,6 +4,7 @@ import Default from './examples/default'
 import CodeExampleComponent from './code_example_component'
 
 import TimePicker from './examples/time_picker'
+import TimeDisabled from './examples/time_disabled'
 import CustomDateFormat from './examples/custom_date_format'
 import CustomClassName from './examples/custom_class_name'
 import PlaceholderText from './examples/placeholder_text'
@@ -45,6 +46,10 @@ export default React.createClass({
     {
       title: 'Time Picker',
       component: <TimePicker />
+    },
+    {
+      title: 'Time Disabled',
+      component: <TimeDisabled />
     },
     {
       title: 'Custom class name',

@@ -138,7 +138,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    title: _react2.default.PropTypes.string,
 	    todayButton: _react2.default.PropTypes.string,
 	    timezone: _react2.default.PropTypes.string,
-	    timePickerButton: _react2.default.PropTypes.bool
+	    timePickerButton: _react2.default.PropTypes.bool,
+	    timeDisabled: _react2.default.PropTypes.bool
 	  },
 
 	  getDefaultProps: function getDefaultProps() {
@@ -162,7 +163,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        to: 'window',
 	        attachment: 'together'
 	      }],
-	      timePickerButton: true
+	      timePickerButton: true,
+	      timeDisabled: false
 	    };
 	  },
 	  getInitialState: function getInitialState() {
@@ -270,7 +272,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      todayButton: this.props.todayButton,
 	      outsideClickIgnoreClass: outsideClickIgnoreClass,
 	      timezone: this.props.timezone,
-	      timePickerButton: this.props.timePickerButton,
+	      timePickerButton: this.props.timeDisabled ? false : this.props.timePickerButton,
 	      onToggle: this.handleToggleTime,
 	      showTimePicker: this.state.showTimePicker,
 	      onRemoveTime: this.handleRemoveTime });
@@ -288,7 +290,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      excludeDates: this.props.excludeDates,
 	      includeDates: this.props.includeDates,
 	      filterDate: this.props.filterDate,
-	      dateFormat: this.props.dateFormat,
+	      dateFormat: this.props.timeDisabled ? this.props.dateOnlyFormat : this.props.dateFormat,
 	      dateOnlyFormat: this.props.dateOnlyFormat,
 	      dateOnly: this.props.dateOnly,
 	      isEmpty: this.props.selected === null ? true : false,

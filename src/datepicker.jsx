@@ -56,7 +56,8 @@ var DatePicker = React.createClass({
     title: React.PropTypes.string,
     todayButton: React.PropTypes.string,
     timezone: React.PropTypes.string,
-    timePickerButton: React.PropTypes.bool
+    timePickerButton: React.PropTypes.bool,
+    timeDisabled: React.PropTypes.bool
   },
 
   getDefaultProps () {
@@ -80,7 +81,8 @@ var DatePicker = React.createClass({
           attachment: 'together'
         }
       ],
-      timePickerButton: true
+      timePickerButton: true,
+      timeDisabled: false
     }
   },
 
@@ -202,7 +204,7 @@ var DatePicker = React.createClass({
         todayButton={this.props.todayButton}
         outsideClickIgnoreClass={outsideClickIgnoreClass}
         timezone={this.props.timezone}
-        timePickerButton={this.props.timePickerButton}
+        timePickerButton={this.props.timeDisabled ? false : this.props.timePickerButton}
         onToggle={this.handleToggleTime}
         showTimePicker={this.state.showTimePicker}
         onRemoveTime={this.handleRemoveTime} />
@@ -223,7 +225,7 @@ var DatePicker = React.createClass({
         excludeDates={this.props.excludeDates}
         includeDates={this.props.includeDates}
         filterDate={this.props.filterDate}
-        dateFormat={this.props.dateFormat}
+        dateFormat={this.props.timeDisabled ? this.props.dateOnlyFormat : this.props.dateFormat}
         dateOnlyFormat={this.props.dateOnlyFormat}
         dateOnly={this.props.dateOnly}
         isEmpty={this.props.selected === null ? true : false}
