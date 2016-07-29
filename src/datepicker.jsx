@@ -29,6 +29,7 @@ var DatePicker = React.createClass({
     endDate: React.PropTypes.object,
     excludeDates: React.PropTypes.array,
     filterDate: React.PropTypes.func,
+    fixedHeight: React.PropTypes.bool,
     id: React.PropTypes.string,
     includeDates: React.PropTypes.array,
     inline: React.PropTypes.bool,
@@ -207,7 +208,8 @@ var DatePicker = React.createClass({
         timePickerButton={this.props.timeDisabled ? false : this.props.timePickerButton}
         onToggle={this.handleToggleTime}
         showTimePicker={this.state.showTimePicker}
-        onRemoveTime={this.handleRemoveTime} />
+        onRemoveTime={this.handleRemoveTime}
+        fixedHeight={this.props.fixedHeight} />
   },
 
   renderDateInput () {

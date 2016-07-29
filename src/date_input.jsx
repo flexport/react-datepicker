@@ -163,7 +163,7 @@ var DateInput = React.createClass({
 
   render () {
     const {
-      date, locale, minDate, maxDate, excludeDates, includeDates, 
+      date, locale, minDate, maxDate, excludeDates, includeDates,
       filterDate, dateFormat, dateOnlyFormat, dateOnly, isEmpty,
       onInputKeyDown, onChangeDate, timezone, showPicker,
       ...inputProps
