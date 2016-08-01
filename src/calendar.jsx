@@ -14,6 +14,7 @@ var Calendar = React.createClass({
     endDate: React.PropTypes.object,
     excludeDates: React.PropTypes.array,
     filterDate: React.PropTypes.func,
+    fixedHeight: React.PropTypes.bool,
     includeDates: React.PropTypes.array,
     locale: React.PropTypes.string,
     maxDate: React.PropTypes.object,
@@ -63,8 +64,14 @@ var Calendar = React.createClass({
     const current = moment()
     if (selected) {
       return selected
+    } else if (minDate && maxDate && openToDate && openToDate.isBetween(minDate, maxDate)) {
+      return openToDate
+    } else if (minDate && openToDate && openToDate.isAfter(minDate)) {
+      return openToDate
     } else if (minDate && minDate.isAfter(current)) {
       return minDate
+    } else if (maxDate && openToDate && openToDate.isBefore(maxDate)) {
+      return openToDate
     } else if (maxDate && maxDate.isBefore(current)) {
       return maxDate
     } else if (openToDate) {
