@@ -20,6 +20,7 @@ var Calendar = React.createClass({
     maxDate: React.PropTypes.object,
     minDate: React.PropTypes.object,
     onClickOutside: React.PropTypes.func.isRequired,
+    outsideClickIgnoreClass: React.PropTypes.string.isRequired,
     onSelect: React.PropTypes.func.isRequired,
     openToDate: React.PropTypes.object,
     selected: React.PropTypes.object,
@@ -256,7 +257,7 @@ var Calendar = React.createClass({
 
   render () {
     return (
-      <div className="react-datepicker">
+      <div className="react-datepicker ignore-react-onclickoutside">
         <div className="react-datepicker__triangle"></div>
         {this.renderDatePicker()}
         {this.renderTimePicker()}
