@@ -256,9 +256,8 @@ var Calendar = React.createClass({
 
 
   render () {
-    var classes = ["react-datepicker", this.props.outsideClickIgnoreClass]
     return (
-      <div className={classes.join(" ")}>
+      <div className="react-datepicker ignore-react-onclickoutside">
         <div className="react-datepicker__triangle"></div>
         {this.renderDatePicker()}
         {this.renderTimePicker()}

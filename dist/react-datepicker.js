@@ -2146,10 +2146,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    );
 	  },
 	  render: function render() {
-	    var classes = ["react-datepicker", this.props.outsideClickIgnoreClass];
 	    return _react2.default.createElement(
 	      'div',
-	      { className: classes.join(" ") },
+	      { className: 'react-datepicker ignore-react-onclickoutside' },
 	      _react2.default.createElement('div', { className: 'react-datepicker__triangle' }),
 	      this.renderDatePicker(),
 	      this.renderTimePicker()
