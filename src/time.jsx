@@ -1,16 +1,17 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import createReactClass from 'create-react-class'
+import PropTypes from 'prop-types'
 import moment from 'moment'
 import { isSameDay, isSameDayAndTime, allDaysDisabledBefore, allDaysDisabledAfter, getEffectiveMinDate, getEffectiveMaxDate } from './date_utils'
 
-var Time = React.createClass({
+var Time = createReactClass({
   displayName: 'Time',
 
   propTypes: {
-    selected: React.PropTypes.object,
-    onTimeClick: React.PropTypes.func,
-    onTimeRemoval: React.PropTypes.func,
-    dateOnly: React.PropTypes.bool,
+    selected: PropTypes.object,
+    onTimeClick: PropTypes.func,
+    onTimeRemoval: PropTypes.func,
+    dateOnly: PropTypes.bool,
   },
 
   getInitialState () {

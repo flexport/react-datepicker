@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom'
 import TetherComponent from './tether_component'
 import classnames from 'classnames'
 import moment from 'moment-timezone'
+import createReactClass from 'create-react-class'
+import PropTypes from 'prop-types'
 
 import { isSameDay, isSameDayAndTime } from './date_utils'
 
@@ -14,51 +16,51 @@ var outsideClickIgnoreClass = 'react-datepicker-ignore-onclickoutside'
  * General datepicker component.
  */
 
-var DatePicker = React.createClass({
+var DatePicker = createReactClass({
   displayName: 'DatePicker',
 
   propTypes: {
-    autoComplete: React.PropTypes.string,
-    className: React.PropTypes.string,
-    dateFormat: React.PropTypes.string,
-    dateFormatCalendar: React.PropTypes.string,
-    dateFormatDay: React.PropTypes.string,
-    dateOnlyFormat: React.PropTypes.string,
-    dateOnly: React.PropTypes.bool,
-    disabled: React.PropTypes.bool,
-    endDate: React.PropTypes.object,
-    excludeDates: React.PropTypes.array,
-    filterDate: React.PropTypes.func,
-    fixedHeight: React.PropTypes.bool,
-    id: React.PropTypes.string,
-    includeDates: React.PropTypes.array,
-    inline: React.PropTypes.bool,
-    isClearable: React.PropTypes.bool,
-    locale: React.PropTypes.string,
-    maxDate: React.PropTypes.object,
-    minDate: React.PropTypes.object,
-    name: React.PropTypes.string,
-    onBlur: React.PropTypes.func,
-    onChange: React.PropTypes.func.isRequired,
-    onFocus: React.PropTypes.func,
-    openToDate: React.PropTypes.object,
-    placeholderText: React.PropTypes.string,
-    popoverAttachment: React.PropTypes.string,
-    popoverTargetAttachment: React.PropTypes.string,
-    popoverTargetOffset: React.PropTypes.string,
-    readOnly: React.PropTypes.bool,
-    renderCalendarTo: React.PropTypes.any,
-    required: React.PropTypes.bool,
-    selected: React.PropTypes.object,
-    showYearDropdown: React.PropTypes.bool,
-    startDate: React.PropTypes.object,
-    tabIndex: React.PropTypes.number,
-    tetherConstraints: React.PropTypes.array,
-    title: React.PropTypes.string,
-    todayButton: React.PropTypes.string,
-    timezone: React.PropTypes.string,
-    timePickerButton: React.PropTypes.bool,
-    timeDisabled: React.PropTypes.bool
+    autoComplete: PropTypes.string,
+    className: PropTypes.string,
+    dateFormat: PropTypes.string,
+    dateFormatCalendar: PropTypes.string,
+    dateFormatDay: PropTypes.string,
+    dateOnlyFormat: PropTypes.string,
+    dateOnly: PropTypes.bool,
+    disabled: PropTypes.bool,
+    endDate: PropTypes.object,
+    excludeDates: PropTypes.array,
+    filterDate: PropTypes.func,
+    fixedHeight: PropTypes.bool,
+    id: PropTypes.string,
+    includeDates: PropTypes.array,
+    inline: PropTypes.bool,
+    isClearable: PropTypes.bool,
+    locale: PropTypes.string,
+    maxDate: PropTypes.object,
+    minDate: PropTypes.object,
+    name: PropTypes.string,
+    onBlur: PropTypes.func,
+    onChange: PropTypes.func.isRequired,
+    onFocus: PropTypes.func,
+    openToDate: PropTypes.object,
+    placeholderText: PropTypes.string,
+    popoverAttachment: PropTypes.string,
+    popoverTargetAttachment: PropTypes.string,
+    popoverTargetOffset: PropTypes.string,
+    readOnly: PropTypes.bool,
+    renderCalendarTo: PropTypes.any,
+    required: PropTypes.bool,
+    selected: PropTypes.object,
+    showYearDropdown: PropTypes.bool,
+    startDate: PropTypes.object,
+    tabIndex: PropTypes.number,
+    tetherConstraints: PropTypes.array,
+    title: PropTypes.string,
+    todayButton: PropTypes.string,
+    timezone: PropTypes.string,
+    timePickerButton: PropTypes.bool,
+    timeDisabled: PropTypes.bool
   },
 
   getDefaultProps () {
