@@ -1,23 +1,25 @@
 import moment from 'moment'
 import React from 'react'
+import createReactClass from 'create-react-class'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { isSameDay, isDayDisabled } from './date_utils'
 
-var Day = React.createClass({
+var Day = createReactClass({
   displayName: 'Day',
 
   propTypes: {
-    day: React.PropTypes.object.isRequired,
-    endDate: React.PropTypes.object,
-    excludeDates: React.PropTypes.array,
-    filterDate: React.PropTypes.func,
-    includeDates: React.PropTypes.array,
-    maxDate: React.PropTypes.object,
-    minDate: React.PropTypes.object,
-    month: React.PropTypes.number,
-    onClick: React.PropTypes.func,
-    selected: React.PropTypes.object,
-    startDate: React.PropTypes.object
+    day: PropTypes.object.isRequired,
+    endDate: PropTypes.object,
+    excludeDates: PropTypes.array,
+    filterDate: PropTypes.func,
+    includeDates: PropTypes.array,
+    maxDate: PropTypes.object,
+    minDate: PropTypes.object,
+    month: PropTypes.number,
+    onClick: PropTypes.func,
+    selected: PropTypes.object,
+    startDate: PropTypes.object
   },
 
   handleClick (event) {

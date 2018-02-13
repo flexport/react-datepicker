@@ -3,37 +3,39 @@ import YearDropdown from './year_dropdown'
 import Month from './month'
 import Time from './time'
 import React from 'react'
+import createReactClass from 'create-react-class'
+import PropTypes from 'prop-types'
 import { isSameDay, allDaysDisabledBefore, allDaysDisabledAfter, getEffectiveMinDate, getEffectiveMaxDate } from './date_utils'
 
-var Calendar = React.createClass({
+var Calendar = createReactClass({
   displayName: 'Calendar',
 
   propTypes: {
-    dateFormat: React.PropTypes.string.isRequired,
-    dateFormatDay: React.PropTypes.string.isRequired,
-    endDate: React.PropTypes.object,
-    excludeDates: React.PropTypes.array,
-    filterDate: React.PropTypes.func,
-    fixedHeight: React.PropTypes.bool,
-    includeDates: React.PropTypes.array,
-    locale: React.PropTypes.string,
-    maxDate: React.PropTypes.object,
-    minDate: React.PropTypes.object,
-    onClickOutside: React.PropTypes.func.isRequired,
-    outsideClickIgnoreClass: React.PropTypes.string.isRequired,
-    onSelect: React.PropTypes.func.isRequired,
-    openToDate: React.PropTypes.object,
-    selected: React.PropTypes.object,
-    showYearDropdown: React.PropTypes.bool,
-    startDate: React.PropTypes.object,
-    todayButton: React.PropTypes.string,
-    timeZone: React.PropTypes.string,
-    timePickerButton: React.PropTypes.bool,
-    onToggle: React.PropTypes.func,
-    showTimePicker: React.PropTypes.bool,
-    onSelect: React.PropTypes.func,
-    dateOnly: React.PropTypes.bool,
-    onRemoveTime: React.PropTypes.func,
+    dateFormat: PropTypes.string.isRequired,
+    dateFormatDay: PropTypes.string.isRequired,
+    endDate: PropTypes.object,
+    excludeDates: PropTypes.array,
+    filterDate: PropTypes.func,
+    fixedHeight: PropTypes.bool,
+    includeDates: PropTypes.array,
+    locale: PropTypes.string,
+    maxDate: PropTypes.object,
+    minDate: PropTypes.object,
+    onClickOutside: PropTypes.func.isRequired,
+    outsideClickIgnoreClass: PropTypes.string.isRequired,
+    onSelect: PropTypes.func.isRequired,
+    openToDate: PropTypes.object,
+    selected: PropTypes.object,
+    showYearDropdown: PropTypes.bool,
+    startDate: PropTypes.object,
+    todayButton: PropTypes.string,
+    timeZone: PropTypes.string,
+    timePickerButton: PropTypes.bool,
+    onToggle: PropTypes.func,
+    showTimePicker: PropTypes.bool,
+    onSelect: PropTypes.func,
+    dateOnly: PropTypes.bool,
+    onRemoveTime: PropTypes.func,
   },
 
   mixins: [require('react-onclickoutside')],
